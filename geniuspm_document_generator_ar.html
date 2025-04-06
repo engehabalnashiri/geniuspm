@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>توليد وثائق المشروع</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: right;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    label, textarea, input, select {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    button:hover {
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>مولّد وثائق المشروع</h2>
+  
+  <form id="projectForm">
+    <label for="projectName">اسم المشروع</label>
+    <input type="text" id="projectName" placeholder="أدخل اسم المشروع" required>
+
+    <label for="goal">الأهداف</label>
+    <textarea id="goal" rows="3" placeholder="أدخل الأهداف الرئيسية للمشروع" required></textarea>
+
+    <label for="activities">الأنشطة</label>
+    <textarea id="activities" rows="3" placeholder="أدخل الأنشطة الرئيسية للمشروع" required></textarea>
+
+    <label for="budget">الميزانية</label>
+    <input type="number" id="budget" placeholder="أدخل الميزانية المتوقعة" required>
+
+    <label for="output">صيغة الوثيقة المطلوبة</label>
+    <select id="output">
+      <option value="pdf">PDF</option>
+      <option value="docx">Word</option>
+    </select>
+
+    <button type="submit">توليد الوثيقة</button>
+  </form>
+
+  <script>
+    document.getElementById('projectForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Collect data from the form
+      const projectName = document.getElementById('projectName').value;
+      const goal = document.getElementById('goal').value;
+      const activities = document.getElementById('activities').value;
+      const budget = document.getElementById('budget').value;
+      const outputFormat = document.getElementById('output').value;
+
+      // Show confirmation message (in real case, trigger the backend here)
+      alert(`تم توليد وثيقة المشروع: 
+اسم المشروع: ${projectName}
+الأهداف: ${goal}
+الأنشطة: ${activities}
+الميزانية: ${budget} 
+صيغة الوثيقة: ${outputFormat}`);
+      
+      // Logic to generate document (e.g., send to server to generate PDF/Word)
+      // This would typically be done on the server side using a library (like jsPDF for PDF or docxtemplater for Word)
+    });
+  </script>
+</body>
+</html>
