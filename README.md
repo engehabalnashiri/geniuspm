@@ -1,2 +1,5 @@
 # GeniusPM
-Smart AI-powered Project Documentation Toolkit
+
+واجهة عربية لتوثيق المشاريع باستخدام الذكاء الاصطناعي.
+
+تم تطويره بواسطة Eng. Engehab Alnashiri
